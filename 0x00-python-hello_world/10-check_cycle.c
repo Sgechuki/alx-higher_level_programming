@@ -9,7 +9,7 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *slow = NULL, *fast = NULL;
+	listint_t *slow, *fast;
 
 	if (list == NULL)
 	{
