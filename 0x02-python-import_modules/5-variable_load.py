@@ -5,3 +5,4 @@ if __name__ == "__main__":
     for var in dir(variable_load_5):
         if var == "a":
             print("{}".format(var))
+            break;
