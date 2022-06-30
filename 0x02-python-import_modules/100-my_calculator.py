@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    from calculator_1 import add, sub, mul, div
+    from calc import add, sub, mul, div
     import sys
 
-    arg_no = sys.argv
-    if arg_no != 4:
+    arg_no = len(sys.argv)
+    if arg_no < 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
     else:
