@@ -19,4 +19,4 @@ def add_tuple(tuple_a=(), tuple_b=()):
         elif len_a == 1:
             return (tuple_a[0], 0)
     else:
-        return (0, 0)
+        return ()
