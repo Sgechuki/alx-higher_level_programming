@@ -20,7 +20,7 @@ void print_python_list_info(PyObject *p)
 		printf("[*] Allocated = %li\n", allocated);
 		for ( ; i < PyList_Size(p); i++)
 		{
-			type = list->ob_item[0]->ob_type->tp_name;
+			type = Py_TYPE(PyList_GetItem(p, i))->tp_name;
 			printf("Element %li: %s\n", i, type);
 		}
 	}
