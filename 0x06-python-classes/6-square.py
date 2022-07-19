@@ -15,8 +15,8 @@ class Square:
         exception"""
     def __init__(self, size=0, position=(0, 0)):
         """Initializes object."""
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     def area(self):
         """Returns the current square area"""
@@ -61,8 +61,8 @@ class Square:
             for k in range(self.__position[1]):
                 print()
             for i in range(self.__size):
-                if self.__position[0] > 0:
-                    print(" " * self.__position[0], end="")
+                for j in range(self.__position[0]):
+                    print(" ", end="")
                 for j in range(self.__size):
                     print("#", end="")
                 print()
