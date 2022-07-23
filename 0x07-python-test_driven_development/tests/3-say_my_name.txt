@@ -1,0 +1,66 @@
+============================================
+This is the doctest for 3-say_my_name.py
+============================================
+
+This library is very simple, since it only has one function called
+``say_my_name()``.
+
+No arguments
+=============
+
+``say_my_name(first_name, last_name)`` prints
+"My name is <first name> <last name>"
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+>>> say_my_name() #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+TypeError: say_my_name() ... 'first_name'
+
+One argument of valid type
+==========================
+
+Since last_name is optional say_my_name() still works with only the
+first_name argument provided
+
+>>> say_my_name("Bob")
+My name is Bob 
+
+>>> say_my_name(last_name="Bob") #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+TypeError: say_my_name() ... 'first_name'
+
+Wrong Types
+==============
+
+>>> say_my_name(12, "White") #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+>>> say_my_name("White", 12) #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+>>> say_my_name(12, 12) #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+Strings
+========
+
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+>>> say_my_name(Seth, "Gechuki") #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+NameError: name ... is not defined
+
+>>> say_may_name("Seth", Gechuki) #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+NameError: name ... is not defined
