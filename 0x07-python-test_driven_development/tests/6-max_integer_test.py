@@ -18,6 +18,8 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([-3, -1, -10, -20]), -1)
         self.assertEqual(max_integer([[2, 4], [0, 1], [3, -1]]), [3, -1])
         self.assertEqual(max_integer((1, 2, 4, 6, 100)), 100)
+        self.assertEqual(max_integer([8, 2, 1]), 8)
+        self.assertEqual(max_integer([8]), 8)
 
     def test_all_str(self):
         """Tests an all string integer"""
