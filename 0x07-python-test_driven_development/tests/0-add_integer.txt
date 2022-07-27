@@ -42,6 +42,17 @@ Because b is an optional argument add_integer can take one argument
 
 NaN
 ===
->>> add_integer(None, 2)
+>>> add_integer(float('nan'), 2)
 Traceback (most recent call last):
-TypeError: a must be an integer
+ValueError: cannot convert float NaN to integer
+
+Float Overflow
+==============
+>>> add_integer(float('inf'), 2)
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(1, float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
