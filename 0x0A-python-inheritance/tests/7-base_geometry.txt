@@ -1,0 +1,43 @@
+This is the doctest for ``7-base_geometry.py``
+It contains only one class ``BaseGeometry``
+===========
+No Argument
+===========
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> b = BaseGeometry()
+>>> b.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+==========
+1 Argument
+==========
+>>> b.integer_validator("name")
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+==================
+Value non int type
+==================
+>>> b.integer_validator("height", "175")
+Traceback (most recent call last):
+TypeError: <name> must be an integer
+
+==================
+Value less than 1
+==================
+>>> b.integer_validator("height", -175)
+Traceback (most recent call last):
+ValueError: <name> must be greater than 0
+
+==========
+Best Case 
+==========
+>>> b.integer_validator("height", 175)
+
+===================
+Non existing method
+===================
+>>> b.integer() #doctest: +ELLIPSIS
+Traceback (most recent call last):
+AttributeError: 'BaseGeometry' object has no attribute ...
