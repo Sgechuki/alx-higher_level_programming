@@ -20,7 +20,7 @@ class Rectangle(BaseGeometry):
     """Inherits from the BaseGeometry class
     Args:
         width (int): breath of rectangle
-        heightn (int): height of rectangle
+        height (int): height of rectangle
     """
     def __init__(self, width, height):
         """Initialises object"""
