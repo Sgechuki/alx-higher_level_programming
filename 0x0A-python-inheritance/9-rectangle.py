@@ -22,4 +22,6 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """prints"""
-        return "[Rectangle] " + str(self.__width) + "/" + str(self.__height)
+        snt = "[" + self.__class__.__name__ + "] "
+        snt += str(self.__width) + "/" + str(self.__height)
+        return snt
