@@ -1,5 +1,25 @@
 This is the doctest for ``7-base_geometry.py``
 It contains only one class ``BaseGeometry``
+1. Checking area edge cases
+
+============
+No argument
+============
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> b = BaseGeometry()
+>>> b.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+================
+Excess Argumnets
+================
+>>> b.area(2)
+Traceback (most recent call last):
+TypeError: area() takes 1 positional argument but 2 were given
+
+2. Checking integer_validator edge cases
+
 ===========
 No Argument
 ===========
@@ -24,9 +44,15 @@ Traceback (most recent call last):
 TypeError: <name> must be an integer
 
 ==================
-Value less than 1
+Value less < 0
 ==================
 >>> b.integer_validator("height", -175)
+Traceback (most recent call last):
+ValueError: <name> must be greater than 0
+
+===========
+Value == 0
+===========
 Traceback (most recent call last):
 ValueError: <name> must be greater than 0
 
