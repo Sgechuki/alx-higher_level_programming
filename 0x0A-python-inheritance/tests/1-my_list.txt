@@ -13,6 +13,7 @@ AttributeError: ... object has no attribute ...
 =========
 Is MyList
 =========
+Check append, __str__ and print sorted with all positive ints
 >>> my_list = MyList()
 >>> my_list.append(1)
 >>> my_list.append(4)
@@ -23,3 +24,26 @@ Is MyList
 [1, 4, 2, 3, 5]
 >>> my_list.print_sorted()
 [1, 2, 3, 4, 5]
+
+Check print sorted with with no sorted append with negative number
+>>> new_list = MyList()
+>>> new_list.append(4)
+>>> new_list.append(-1)
+>>> new_list.append(2)
+>>> new_list.append(3)
+>>> new_list.append(-2)
+>>> new_list.print_sorted()
+[-2, -1, 2, 3, 4]
+
+Checking print_sorted on empty list
+>>> a = MyList()
+>>> a.print_sorted()
+[]
+
+Checking print_sorted returns new list
+>>> b = MyList()
+>>> b.append(4)
+>>> c = b.print_sorted()
+[4]
+>>> c is b
+False
