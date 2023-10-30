@@ -1,0 +1,58 @@
+============================================
+This is the doctest for ../0-add_integer.py
+============================================
+This library is very simple, since it only has one function called
+``add_integer()``.
+
+Numbers
+========
+``add_integer(a, b)`` returns the sum of its two arguments.  For numbers,
+that value is equivalent to using the ``+`` operator.
+
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(1, 2)
+3
+
+It also works with floating-point values, but after converting them
+to integers
+
+>>> add_integer(1.1, 2.3)
+3
+
+Non-numbers
+===========
+For non-type int or float arguments a TypeError is raised
+
+>>> add_integer("one", 2) #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(1, "two") #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+Less Arguments
+==============
+Because b is an optional argument add_integer can take one argument
+
+>>> add_integer(2)
+100
+
+NaN
+===
+>>> add_integer(float('nan'), 2)
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
+
+Float Overflow
+==============
+>>> add_integer(float('inf'), 2)
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(1, float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+

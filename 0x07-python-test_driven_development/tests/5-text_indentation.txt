@@ -1,0 +1,41 @@
+============================================
+This is a doctest for "5-text_indentation.py"
+============================================
+
+This library has only one function called ``text_indentation()``
+
+Non string types
+================
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation([1, 2, 3, 4])
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(1234)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+String types
+============
+
+>>> text_indentation(" ")
+<BLANKLINE>
+
+>>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+... Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? \
+... Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: \
+... Plus semper voluptatis?""")
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+<BLANKLINE>
+Quonam modo?
+<BLANKLINE>
+Utrum igitur tibi litteram videor an totas paginas commovere?
+<BLANKLINE>
+Non autem hoc:
+<BLANKLINE>
+igitur ne illud quidem.
+<BLANKLINE>
+Fortasse id optimum, sed ubi illud:
+<BLANKLINE>
+Plus semper voluptatis?
