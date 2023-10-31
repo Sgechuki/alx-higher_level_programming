@@ -16,9 +16,9 @@ def matrix_mul(m_a, m_b):
         raise TypeError("m_a must be a list of lists")
     elif not all(isinstance(lst, list) for lst in m_b):
         raise TypeError("m_b must be a list of lists")
-    elif len(m_a) == 0:
+    elif m_a == [] or m_a == [[]]:
         raise ValueError("m_a can't be empty")
-    elif len(m_b) == 0:
+    elif m_b == [] or m_b == [[]]:
         raise ValueError("m_b can't be empty")
     elif not all(isinstance(i, (int, float)) for lst in m_a for i in lst):
         raise TypeError("m_a should contain only integers or floats")

@@ -40,6 +40,10 @@ Because b is an optional argument add_integer can take one argument
 >>> add_integer(2)
 100
 
+>>> add-integer()
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
 NaN
 ===
 >>> add_integer(float('nan'), 2)
