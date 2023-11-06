@@ -1,0 +1,85 @@
+This is the doctest for ``7-base_geometry.py``
+It contains only one class ``BaseGeometry``
+1. Checking area edge cases
+
+============
+No argument
+============
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> b = BaseGeometry()
+>>> b.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+================
+Excess Argumnets
+================
+>>> b.area(2)
+Traceback (most recent call last):
+TypeError: area() takes 1 positional argument but 2 were given
+
+2. Checking integer_validator edge cases
+
+===========
+No Argument
+===========
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> b = BaseGeometry()
+>>> b.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+==========
+1 Argument
+==========
+>>> b.integer_validator("name")
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+==================
+Value non int type
+==================
+>>> b.integer_validator("height", "175")
+Traceback (most recent call last):
+TypeError: height must be an integer
+>>> b.integer_validator("age", (23,))
+Traceback (most recent call last):
+TypeError: age must be an integer
+>>> b.integer_validator("age", [23])
+Traceback (most recent call last):
+TypeError: age must be an integer
+>>> b.integer_validator("age", True)
+Traceback (most recent call last):
+TypeError: age must be an integer
+>>> b.integer_validator("age", {22, 23})
+Traceback (most recent call last):
+TypeError: age must be an integer
+>>> b.integer_validator("age", None)
+Traceback (most recent call last):
+TypeError: age must be an integer
+
+==================
+Value less < 0
+==================
+>>> b.integer_validator("height", -175)
+Traceback (most recent call last):
+ValueError: height must be greater than 0
+
+===========
+Value == 0
+===========
+>>> b.integer_validator("height", 0)
+Traceback (most recent call last):
+ValueError: height must be greater than 0
+
+==========
+Best Case 
+==========
+>>> b.integer_validator("height", 175)
+
+===================
+Non existing method
+===================
+>>> b.integer() #doctest: +ELLIPSIS
+Traceback (most recent call last):
+AttributeError: 'BaseGeometry' object has no attribute ...

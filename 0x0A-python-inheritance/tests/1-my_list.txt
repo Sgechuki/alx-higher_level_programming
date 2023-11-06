@@ -1,0 +1,51 @@
+This is the doctest for 1-my_list.py
+It contains class MyList
+
+==========
+Not MyList
+==========
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = dict()
+>>> my_list.append(3) #doctest: +ELLIPSIS
+Traceback (most recent call last):
+AttributeError: ... object has no attribute ...
+
+=========
+Is MyList
+=========
+Check append, __str__ and print sorted with all positive ints
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+Check print sorted with with no sorted append with negative number
+>>> new_list = MyList()
+>>> new_list.append(4)
+>>> new_list.append(-1)
+>>> new_list.append(2)
+>>> new_list.append(3)
+>>> new_list.append(-2)
+>>> new_list.print_sorted()
+[-2, -1, 2, 3, 4]
+
+Checking print_sorted on empty list
+>>> a = MyList()
+>>> a.print_sorted()
+[]
+
+Checking print_sorted returns new list
+>>> b = MyList()
+>>> b.append(3)
+>>> b.append(1)
+>>> b.append(8)
+>>> b.print_sorted()
+[1, 3, 8]
+>>> print(b)
+[3, 1, 8]
