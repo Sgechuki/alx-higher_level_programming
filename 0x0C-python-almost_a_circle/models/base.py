@@ -3,7 +3,6 @@
 import json
 import os
 import csv
-import turtle
 
 
 class Base:
@@ -18,11 +17,11 @@ class Base:
 
     def __init__(self, id=None):
         """Initialize instance with attributes"""
-        if id is None:
+        if id is not None:
+            self.id = id
+        else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-        else:
-            self.id = id
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -109,29 +108,3 @@ class Base:
                 for dic in rows:
                     l_inst.append(cls.create(**dic))
         return l_inst
-
-    @staticmethod
-    def draw(list_rectangles, list_squares):
-        """opens a window and draws all the Rectangles and Squares"""
-        screen = turtle.Screen()
-        t = t.Pen()
-        for rect in list_rectangles:
-            r = rect
-            t.up()
-            t.goto(r.x, r.y)
-            t.down()
-            t.forward(r.width)
-            t.left(90)
-            t.forward(r.height)
-            t.left(90)
-            t.forward(r.width)
-            t.left(90)
-            t.forward(90)
-        for sq in list_squares:
-            s = sq
-            t.up()
-            t.goto(s.x, s.y)
-            t.down()
-            for i in range(4):
-                t.forward(s.width)
-                t.left(90)
