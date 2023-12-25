@@ -1,3 +1,4 @@
+-- 17 Go to UTF8
 -- convert all of the following to UTF8
 -- Database hbtn_0c_0
 -- Table first_table
