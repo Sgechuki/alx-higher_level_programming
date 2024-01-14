@@ -20,5 +20,5 @@ if __name__ == "__main__":
     session.add(state)
     session.commit()
     latest = session.query(State).filter(State.name == "Louisiana").first()
-        print("{}".format(latest.id))
+    print("{}".format(latest.id))
     session.close()
