@@ -19,11 +19,9 @@ if __name__ == "__main__":
             WHERE s.name = %s\
             ORDER BY c.id"
     cur.execute(query, [argv[4]])
-    rows = cur.fetchall()
-    for index, row in enumerate(rows):
-        if index < (len(rows) - 1):
-            print(row[0], end=", ")
-        else:
-            print(row[0])
+    cities = []
+    for city in cursor.fetchall():
+        cities.append(city[0])
+        print(", ".join(cities))
     cur.close()
     db.close()
