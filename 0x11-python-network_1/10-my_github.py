@@ -2,7 +2,7 @@
 """
 takes your GitHub credentials
 uses the GitHub API to display your id
-must use Basic Authentication 
+must use Basic Authentication
 first argument will be your username
 second argument will be your password
 """
