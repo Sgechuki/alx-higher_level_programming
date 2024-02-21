@@ -1,18 +1,23 @@
 #!/usr/bin/node
 
 const request = require('request');
-let num = 0;
+let i = 0;
+let j = 0;
+let s;
 
-request(process.argv[2], (error, response, body) =>
-	{
-		responseBody = JSON.parse(body);
-		for (f in responseBody["results"]) {
-			for ( c in f["characters"]) {
-			if c.includes("18") {
-				num++;
-			}
-			}
-		}
-		console.log(num);
-	}
-);
+request(process.argv[2], (error, response, body) => {
+  const responseBody = JSON.parse(body);
+  const size = responseBody.count;
+  if (error) {
+    console.log(error);
+  }
+  for (; i < size; i++) {
+    const arr = responseBody.results[i].characters;
+    for (s of arr) {
+      if (s.includes('18')) {
+        j++;
+      }
+    }
+  }
+  console.log(j);
+});
