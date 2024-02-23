@@ -7,7 +7,7 @@ let s;
 
 request(process.argv[2], (error, response, body) => {
   const responseBody = JSON.parse(body);
-  const size = responseBody.count;
+  const size = responseBody.results.length;
   if (error) {
     console.log(error);
   }
