@@ -7,7 +7,7 @@ $(document).ready(function () {
       const films = data.results;
       const filmsList = $('UL#list_movies');
       $.each(films, function (index, film) {
-        filmsList.append('<LI>film.title</LI>');
+        filmsList.append('<LI>' + film.title + '</LI>');
       });
     }
   });
